@@ -21,8 +21,8 @@
 		testing("Helm console at level [z] was unable to find a corresponding overmap object.")
 
 	for(var/level in map_sectors)
-		var/obj/effect/map/sector/S = map_sectors["[level]"]
-		if (istype(S) && S.always_known)
+		var/obj/effect/overmap/visitable/sector/S = map_sectors["[level]"]
+		if (istype(S) && S.known)
 			var/datum/data/record/R = new()
 			R.fields["name"] = S.name
 			R.fields["x"] = S.x

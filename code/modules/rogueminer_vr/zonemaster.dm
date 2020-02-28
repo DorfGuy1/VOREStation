@@ -7,6 +7,7 @@
 	//our area
 	var/area/asteroid/rogue/myarea
 	var/area/shuttle/belter/myshuttle
+	var/obj/effect/shuttle_landmark/myshuttle_landmark // TODO - Leshana - Gotta initialize this
 
 	//world.time
 	var/prepared_at = 0
@@ -32,7 +33,7 @@
 /datum/rogue/zonemaster/New(var/area/A)
 	ASSERT(A)
 	myarea = A
-	myshuttle = locate(myarea.shuttle_area)
+	myshuttle = locate(myarea.shuttle_area) // TODO - Leshana - Replace with landmarks etc.
 	spawn(10) //This is called from controller New() and freaks out if this calls back too fast.
 		rm_controller.mark_clean(src)
 

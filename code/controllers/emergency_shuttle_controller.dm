@@ -5,7 +5,7 @@
 var/global/datum/emergency_shuttle_controller/emergency_shuttle
 
 /datum/emergency_shuttle_controller
-	var/datum/shuttle/ferry/emergency/shuttle
+	var/datum/shuttle/autodock/ferry/emergency/shuttle // Set in shuttle_emergency.dm TODO - is it really?
 	var/list/escape_pods
 
 	var/launch_time			//the time at which the shuttle will be launched
@@ -36,8 +36,8 @@ var/global/datum/emergency_shuttle_controller/emergency_shuttle
 			if (!shuttle.location)	//leaving from the station
 				//launch the pods!
 				for (var/EP in escape_pods)
-					var/datum/shuttle/ferry/escape_pod/pod
-					if(istype(escape_pods[EP], /datum/shuttle/ferry/escape_pod))
+					var/datum/shuttle/autodock/ferry/escape_pod/pod
+					if(istype(escape_pods[EP], /datum/shuttle/autodock/ferry/escape_pod))
 						pod = escape_pods[EP]
 					else
 						continue
@@ -63,8 +63,8 @@ var/global/datum/emergency_shuttle_controller/emergency_shuttle
 		//arm the escape pods
 		if (evac)
 			for (var/EP in escape_pods)
-				var/datum/shuttle/ferry/escape_pod/pod
-				if(istype(escape_pods[EP], /datum/shuttle/ferry/escape_pod))
+				var/datum/shuttle/autodock/ferry/escape_pod/pod
+				if(istype(escape_pods[EP], /datum/shuttle/autodock/ferry/escape_pod))
 					pod = escape_pods[EP]
 				else
 					continue

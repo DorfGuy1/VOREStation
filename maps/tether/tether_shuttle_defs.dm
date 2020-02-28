@@ -12,6 +12,19 @@
 	dock_target_offsite = "centcom_dock"
 	move_time = SHUTTLE_TRANSIT_DURATION_RETURN
 
+/obj/effect/shuttle_landmark/tether/escape/station
+	landmark_tag = "escape_station"
+	shuttle_restricted = "Escape"
+	docking_controller = "escape_dock"
+	base_area = /TODO
+	base_turf = /TODO
+/obj/effect/shuttle_landmark/tether/escape/centcom
+	landmark_tag = "escape_centcom"
+	shuttle_restricted = "Escape"
+	docking_controller = "centcom_dock"
+	base_area = /TODO
+	base_turf = /TODO
+
 //////////////////////////////////////////////////////////////
 /datum/shuttle/ferry/escape_pod/large_escape_pod1
 	name = "Large Escape Pod 1"

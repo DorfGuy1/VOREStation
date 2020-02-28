@@ -393,7 +393,7 @@
 // code\game\machinery\computer\supply.dm, starting at line 55
 /obj/item/weapon/commcard/proc/get_supply_shuttle_status()
 	var/shuttle_status[0]
-	var/datum/shuttle/ferry/supply/shuttle = supply_controller.shuttle
+	var/datum/shuttle/autodock/ferry/supply/shuttle = supply_controller.shuttle
 	if(shuttle)
 		if(shuttle.has_arrive_time())
 			shuttle_status["location"] = "In transit"
