@@ -66,10 +66,10 @@
 		var/turf/target = translation[source]
 
 		if(target)
-			if(base_area)
-				ChangeArea(target, get_area(source))
-				ChangeArea(source, base_area)
-			translate_turf(source, target, base_turf)
+			if(base_area) ChangeArea(target, get_area(source))
+			var/leave_turf = base_turf ? base_turf : get_base_turf_by_area(base_area ? base_area : source)
+			translate_turf(source, target, leave_turf)
+			if(base_area) ChangeArea(source, base_area)
 
 	//change the old turfs (Currently done by translate_turf for us)
 	//for(var/turf/source in translation)

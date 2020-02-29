@@ -41,10 +41,12 @@ SUBSYSTEM_DEF(shuttles)
 
 	var/tmp/list/current_run                       // Shuttles remaining to process this fire() tick
 
-/datum/controller/subsystem/shuttles/Initialize(timeofday)
+/datum/controller/subsystem/shuttles/PreInit()
 	global.shuttle_controller = src // TODO - Remove this! Change everything to point at SSshuttles intead
-	last_landmark_registration_time = world.time
+	global.SSshuttle = src // TODO - Remove this! Change everything to point at SSshuttles intead
 
+/datum/controller/subsystem/shuttles/Initialize(timeofday)
+	last_landmark_registration_time = world.time
 	// Find all declared shuttle datums and initailize them. (Okay, queue them for initialization a few lines further down)
 	for(var/shuttle_type in subtypesof(/datum/shuttle)) // This accounts for most shuttles, though away maps can queue up more.
 		var/datum/shuttle/shuttle = shuttle_type
@@ -157,6 +159,7 @@ SUBSYSTEM_DEF(shuttles)
 	if(initial(shuttle.category) != shuttle_type) // Skip if its an "abstract class" datum
 		shuttle = new shuttle()
 		shuttle_areas |= shuttle.shuttle_area
+		log_debug("Initialized shuttle [shuttle] ([shuttle.type])")
 		return shuttle
 		// TODO - Why not do these things?
 		// shuttle.init_docking_controllers() // No need, because shuttle datums fetch refs themselves in New()

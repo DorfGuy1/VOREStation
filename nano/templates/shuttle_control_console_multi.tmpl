@@ -5,8 +5,7 @@
 	</div>
 	{{if data.can_cloak}}
 		<div class="item">
-			{{:data.legit ? "ATC Inhibitor" : "Cloaking Field"}} is
-			{{:data.cloaked ? "enabled" : "disabled"}}. {{:helper.link('Toggle', 'arrowreturn-1-s', {'toggle_cloaked' : '1'} }}
+			{{:data.legit ? "ATC Inhibitor" : "Cloaking Field"}} is {{:data.cloaked ? "enabled" : "disabled"}}. {{:helper.link('Toggle', 'arrowreturn-1-s', {'toggle_cloaked' : '1'}) }}
 		</div>
 	{{/if}}
 </div>
