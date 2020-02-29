@@ -1934,4 +1934,4 @@ Departamental Swimsuits, for general use
 
 /obj/item/clothing/under/fluff/excess/get_worn_icon_state(var/slot_name)
 	. = ..()
-	. = copytext(. , 1 , lentext( . ) - 1)  //get rid of the extra "_s" added by /obj/item/clothing/under/get_worn_icon_state()
+	. = copytext(. , 1 , length( . ) - 1)  //get rid of the extra "_s" added by /obj/item/clothing/under/get_worn_icon_state()
