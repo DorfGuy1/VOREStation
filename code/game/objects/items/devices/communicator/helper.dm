@@ -403,8 +403,8 @@
 		else
 			shuttle_status["time"] = 0
 			if(shuttle.at_station())
-				if(shuttle.docking_controller)
-					switch(shuttle.docking_controller.get_docking_status())
+				if(shuttle.shuttle_docking_controller)
+					switch(shuttle.shuttle_docking_controller.get_docking_status())
 						if("docked")
 							shuttle_status["location"] = "Docked"
 							shuttle_status["mode"] = SUP_SHUTTLE_DOCKED

@@ -78,7 +78,7 @@
 		else // Otherwise we are about to start one or just finished one.
 			if(autopilot_delay > 0) // Wait for awhile so people can get on and off.
 				if(active_docking_controller && shuttle_docking_controller) // Dock to the destination if possible.
-					var/docking_status = docking_controller.get_docking_status()
+					var/docking_status = shuttle_docking_controller.get_docking_status()
 					if(docking_status == "undocked")
 						dock()
 						autopilot_say("Docking.")
@@ -98,7 +98,7 @@
 
 			else // Time to go.
 				if(active_docking_controller && shuttle_docking_controller) // Undock if possible.
-					var/docking_status = docking_controller.get_docking_status()
+					var/docking_status = shuttle_docking_controller.get_docking_status()
 					if(docking_status == "docked")
 						undock()
 						autopilot_say("Undocking.")

@@ -35,7 +35,7 @@
 	var/tmp/depart_time = 0 //Similar to above, set when the shuttle leaves when long jumping, to compare against arrive time.
 
 	// TODO - Leshana decide - Baystation put "docking" stuff in a subtype, leaving base type pure and free of docking stuff. Should we?
-	var/datum/computer/file/embedded_program/docking/docking_controller	//the controller itself. (micro-controller, not game controller)
+	// var/datum/computer/file/embedded_program/docking/docking_controller	//the controller itself. (micro-controller, not game controller)
 
 
 /datum/shuttle/New(_name, var/obj/effect/shuttle_landmark/initial_location)
