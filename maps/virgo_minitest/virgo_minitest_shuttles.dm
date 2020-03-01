@@ -32,9 +32,9 @@
 	name = "Ferry-Demo"
 	warmup_time = 0
 	shuttle_area = /area/shuttle/ferrydemo
-	dock_target = "ferrydemo_shuttle"
-	waypoint_station = "nav_station_docking"
-	waypoint_offsite = "nav_ferrydemo_space"
+	docking_controller_tag = "ferrydemo_shuttle"
+	landmark_station = "nav_station_docking"
+	landmark_offsite = "nav_ferrydemo_space"
 
 /area/shuttle/ferrydemo
 	name = "Ferry-Demo Suttle"
@@ -64,7 +64,7 @@
 	name = "Multi-Demo"
 	warmup_time = 0
 	shuttle_area = /area/shuttle/multidemo
-	dock_target = "multidemo_shuttle"
+	docking_controller_tag = "multidemo_shuttle"
 	current_location = "nav_multidemo_start"
 	destination_tags = list("nav_multidemo_start", "nav_shared_space", "nav_station_docking", "nav_multidemo_nearby")
 	can_cloak = TRUE
@@ -105,7 +105,7 @@
 	warmup_time = 0
 	shuttle_area = /area/shuttle/webdemo
 	current_location = "nav_station_inside"
-	dock_target = "webdemo_docker"
+	docking_controller_tag = "webdemo_docker"
 	web_master_type = /datum/shuttle_web_master/webdemo
 
 /datum/shuttle_web_master/webdemo
