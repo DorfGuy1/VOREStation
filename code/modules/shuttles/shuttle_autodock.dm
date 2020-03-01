@@ -15,7 +15,7 @@
 	var/docking_codes
 
 	var/tmp/obj/effect/shuttle_landmark/next_location  //This is only used internally.
-	var/tmp/datum/computer/file/embedded_program/docking/active_docking_controller // Controller we are docked with (or trying to)
+	var/datum/computer/file/embedded_program/docking/active_docking_controller // Controller we are docked with (or trying to)
 
 	var/obj/effect/shuttle_landmark/landmark_transition  //This variable is type-abused initially: specify the landmark_tag, not the actual landmark.
 	var/move_time = 240		//the time spent in the transition area

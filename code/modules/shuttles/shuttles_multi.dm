@@ -20,7 +20,7 @@
 	var/start_location
 	var/last_location
 	var/return_warning = 0
-	var/legit = 0 //VOREStation Add - Whether or not a shuttle is a legit NT shuttle.
+	var/legit = FALSE
 
 /datum/shuttle/autodock/multi/New()
 	..()
