@@ -886,43 +886,14 @@
 /area/shuttle/excursion
 	name = "\improper Excursion Shuttle"
 	icon_state = "shuttle2"
-	base_turf = /turf/space
 	requires_power = 1
-
-/area/shuttle/excursion/tether
-	name = "\improper Excursion Shuttle - Tether"
-	base_turf = /turf/simulated/floor/reinforced
-
-/area/shuttle/excursion/tether_nearby
-	name = "\improper Excursion Shuttle - Tether Near"
-
-/area/shuttle/excursion/tether_dockarm
-	name = "\improper Excursion Shuttle - Tether Arm"
-
-/area/shuttle/excursion/space
-	name = "\improper Excursion Shuttle - Space"
-
-/area/shuttle/excursion/space_moving
-	name = "\improper Excursion Shuttle - Space Moving"
-	base_turf = /turf/space/transit/north
-
-/area/shuttle/excursion/bluespace
-	name = "\improper Excursion Shuttle - Bluespace"
-	base_turf = /turf/space/bluespace
-
-/area/shuttle/excursion/sand_moving
-	name = "\improper Excursion Shuttle - Sand Transit"
-	base_turf = /turf/space/sandyscroll
-
-/area/shuttle/excursion/virgo3b_sky
-	name = "\improper Excursion Shuttle - Virgo3b Sky"
-	base_turf = /turf/simulated/sky/virgo3b/south
 
 // Belter Dock
 
 /area/quartermaster/belterdock
 	name = "\improper Cargo Belter Access"
 	icon_state = "mining"
+
 // Elevator area //
 
 /area/tether/elevator
@@ -1241,17 +1212,8 @@
 	base_turf = /turf/space/transit/east
 
 // Tether Map has this shuttle
-/area/shuttle/tether/surface
-	name = "Tether Shuttle Landed"
-	icon_state = "shuttle"
-	base_turf = /turf/simulated/floor/reinforced
-
-/area/shuttle/tether/station
-	name = "Tether Shuttle Dock"
-	icon_state = "shuttle2"
-
-/area/shuttle/tether/transit
-	name = "Tether Shuttle Transit"
+/area/shuttle/tether
+	name = "Tether Shuttle"
 	icon_state = "shuttle2"
 
 //Skipjack
