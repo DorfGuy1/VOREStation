@@ -56,8 +56,6 @@
 	var/preferred_interim_tag = null	// When building a new route, use interim landmark with this tag.
 	var/skip_me = FALSE					// We will not autocreate this one. Some map must be doing it.
 
-	// Leshana - Should not be needed anymore var/dock_target = null				// The tag_id that the shuttle will use to try to dock to the destination, if able.
-
 	var/radio_announce = 0				// Whether it will make a station announcement (0) or a radio announcement (1).
 	var/announcer = null				// The name of the 'announcer' that will say the arrival/departure messages.  Defaults to the map's boss name if blank.
 //	var/arrival_message = null			// Message said if the ship enters this destination.  Not announced if the ship is cloaked.
@@ -214,10 +212,6 @@
 		future_destination.enter()
 		current_destination = future_destination
 		future_destination = null
-
-// /datum/shuttle_web_master/proc/current_dock_target()
-// 	if(current_destination)
-// 		return current_destination.dock_target
 
 /datum/shuttle_web_master/proc/get_available_routes()
 	if(current_destination)

@@ -9,8 +9,7 @@
 	var/last_dock_attempt_time = 0
 
 	//var/current_dock_target // TODO - Leshana - This does not need to be a datum variable, Is used ONLY in update_docking_target()
-	// dock_target SHOULD be called docking_controller_tag or shuttle_docking_controller_tag
-	var/dock_target = null // ID of the controller on the shuttle (If multiple, this is the default one)
+	var/docking_controller_tag = null // ID of the controller on the shuttle (If multiple, this is the default one)
 	var/datum/computer/file/embedded_program/docking/shuttle_docking_controller // Controller on the shuttle (the one in use)
 	var/docking_codes
 
@@ -64,7 +63,7 @@
 	if(location && location.special_dock_targets && location.special_dock_targets[name])
 		current_dock_target = location.special_dock_targets[name]
 	else
-		current_dock_target = dock_target
+		current_dock_target = docking_controller_tag
 	shuttle_docking_controller = SSshuttle.docking_registry[current_dock_target]
 	if(current_dock_target && !shuttle_docking_controller)
 		to_world("<span class='danger'>warning: shuttle [src] can't find its controller with tag [current_dock_target]!</span>")
