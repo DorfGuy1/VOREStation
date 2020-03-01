@@ -118,7 +118,7 @@
 	//Update shuttle destination.
 	var/datum/shuttle/autodock/ferry/S = SSshuttles.shuttles["Belter"]
 	// TODO - Safety checks! (Actually just replace this entire thing with some overmap stuff!)
-	S.waypoint_offsite = ZM_target.myshuttle_landmark
+	S.landmark_offsite = ZM_target.myshuttle_landmark
 	S.next_location = S.get_location_waypoint(!S.location)
 
 	//Re-enable shuttle.

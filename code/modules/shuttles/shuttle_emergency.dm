@@ -29,7 +29,7 @@
 	..(destination, interim, travel_time, direction)
 
 /datum/shuttle/autodock/ferry/emergency/perform_shuttle_move()
-	if (current_location == waypoint_station)	//leaving the station
+	if (current_location == landmark_station)	//leaving the station
 		spawn(0)
 			emergency_shuttle.departed = 1
 			var/estimated_time = round(emergency_shuttle.estimate_arrival_time()/60,1)
