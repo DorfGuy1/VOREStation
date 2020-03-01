@@ -60,7 +60,7 @@
 		current_location = SSshuttle.get_landmark(current_location)
 	if(!istype(current_location))
 		log_debug("UM whoops, no initial? [src]")
-		CRASH("Shuttle \"[name]\" could not find its starting location landmark [current_location].")
+		CRASH("Shuttle '[name]' could not find its starting location landmark [current_location].")
 
 	if(src.name in SSshuttle.shuttles)
 		CRASH("A shuttle with the name '[name]' is already defined.")
@@ -194,8 +194,8 @@
 					create_warning_effect(destination)
 				sleep(5)
 
-				if(!attempt_move(destination))
-					attempt_move(start_location) //try to go back to where we started. If that fails, I guess we're stuck in the interim location
+			if(!attempt_move(destination))
+				attempt_move(start_location) //try to go back to where we started. If that fails, I guess we're stuck in the interim location
 
 		moving_status = SHUTTLE_IDLE
 		on_shuttle_arrival(start_location, destination)
@@ -249,6 +249,7 @@
 // REturns TRUE if we actually moved, otherwise FALSE.
 /datum/shuttle/proc/attempt_move(var/obj/effect/shuttle_landmark/destination, var/interim = FALSE)
 	if(current_location == destination)
+		log_shuttle("Shuttle [src] attempted to move to [destination] but is already there!")
 		return FALSE
 
 	if(!destination.is_valid(src))

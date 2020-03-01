@@ -36,7 +36,7 @@
 
 /datum/shuttle/autodock/web_shuttle/current_dock_target()
 	// TODO - Probably don't even need to override this right?  Debug testing code below will check!
-	. = web_master?.get_current_destination()?.docking_controller?.id_tag
+	. = web_master?.get_current_destination()?.my_landmark?.docking_controller?.id_tag
 	if (. != ..())
 		warning("Web shuttle [src] had current_dock_target()=[.] but autodock.current_dock_target() = [..()]")
 
@@ -440,8 +440,8 @@
 			message_admins("ERROR: Shuttle computer was asked to travel to a nonexistant destination.")
 			return
 
-		WS.next_location = target_destination
-		if(can_move(WS, usr))
+		WS.next_location = target_destination.my_landmark
+		if(!can_move(WS, usr))
 			return
 
 		WS.web_master.future_destination = target_destination

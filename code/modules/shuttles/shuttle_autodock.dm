@@ -96,14 +96,12 @@
 
 // DEPRECATED - There should be no need to ever actually get this information.
 /datum/shuttle/autodock/proc/current_dock_target()
-	warning("Deprecated proc current_dock_target() called on [src]");
 	if(active_docking_controller)
 		return active_docking_controller.id_tag
 	return null
 
 // DEPRECATED - These checks are built into the check_docked() and check_undocked() procs
 /datum/shuttle/autodock/proc/skip_docking_checks()
-	warning("Deprecated proc skip_docking_checks() called on [src]");
 	if (!shuttle_docking_controller || !current_dock_target())
 		return TRUE	//shuttles without docking controllers or at locations without docking ports act like old-style shuttles
 	return FALSE
