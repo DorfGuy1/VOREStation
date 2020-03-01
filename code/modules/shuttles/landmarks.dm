@@ -79,6 +79,16 @@
 			return FALSE
 	return TRUE
 
+// This creates a graphical warning to where the shuttle is about to land in approximately five seconds.
+/obj/effect/shuttle_landmark/proc/create_warning_effect(var/datum/shuttle/shuttle)
+	if(shuttle.current_location == src)
+		return // TOO LATE!
+	for(var/area/A in shuttle.shuttle_area)
+		var/list/translation = get_turf_translation(get_turf(shuttle.current_location), get_turf(src), A.contents)
+		for(var/T in list_values(translation))
+			new /obj/effect/temporary_effect/shuttle_landing(T) // It'll delete itself when needed.
+	return
+
 // Should return a readable description of why not if it can't depart.
 /obj/effect/shuttle_landmark/proc/cannot_depart(datum/shuttle/shuttle)
 	return FALSE

@@ -83,11 +83,8 @@
 	. = ..()
 
 // This creates a graphical warning to where the shuttle is about to land, in approximately five seconds.
-/datum/shuttle/proc/create_warning_effect(area/landing_area)
-	// TODO This has to be done differently, to be crushed zones aren't an area!
-	// TODO - Probably need to gather up list of all destination turfs and then loop over those
-	//for(var/turf/T in landing_area)
-	//	new /obj/effect/temporary_effect/shuttle_landing(T) // It'll delete itself when needed.
+/datum/shuttle/proc/create_warning_effect(var/obj/effect/shuttle_landmark/destination)
+	destination.create_warning_effect(src)
 
 // Return false to abort a jump, before the 'warmup' phase.
 /datum/shuttle/proc/pre_warmup_checks()
