@@ -3408,7 +3408,6 @@
 #include "code\ZAS\Zone.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
-#include "maps\example\example.dm"
 #include "maps\RandomZLevels\blackmarketpackers.dm"
 #include "maps\southern_cross\southern_cross_jobs_vr.dm"
 #include "maps\southern_cross\items\encryptionkey_sc.dm"
@@ -3437,5 +3436,6 @@
 #include "maps\submaps\surface_submaps\plains\plains_areas.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
+#include "maps\virgo_minitest\virgo_minitest.dm"
 #include "maps\~map_system\maps.dm"
 // END_INCLUDE
