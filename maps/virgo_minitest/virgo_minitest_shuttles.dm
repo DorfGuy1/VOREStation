@@ -15,7 +15,8 @@
 	name = "Internal Hangar"
 	landmark_tag = "nav_station_inside"
 	docking_controller = "station_hangar"
-	flags = SLANDMARK_FLAG_AUTOSET
+	base_turf = /turf/simulated/floor/tiled
+	base_area = /area/bridge
 
 /obj/effect/shuttle_landmark/shared_space
 	name = "Somewhere In Space"
@@ -103,7 +104,7 @@
 	name = "Web-Demo"
 	warmup_time = 0
 	shuttle_area = /area/shuttle/webdemo
-	current_location = "nav_shared_space"
+	current_location = "nav_station_inside"
 	dock_target = "webdemo_docker"
 	web_master_type = /datum/shuttle_web_master/webdemo
 
